@@ -277,7 +277,7 @@ def check_老乞丐(区,threshold=0.8,topic_id=None):
     val,_,_=find_image_in_larger(告示牌_路径,截图_路径)
     if val<threshold:
         print("出错啦，告示牌不在")
-        wxPusher_send_messaget_post('出错了','出错了','10844',全局_wxapp_token)
+        wxPusher_send_messaget_post('出错了','出错了','你的提示id',全局_wxapp_token)
         return -1 #出错了
     tap_screen(447,450)#点击告示牌
     time.sleep(2)
@@ -287,7 +287,7 @@ def check_老乞丐(区,threshold=0.8,topic_id=None):
     val,_,_=find_image_in_larger(返回键_路径,截图_路径)
     if val<threshold:
         print("出错啦，告示牌没打开")
-        wxPusher_send_messaget_post('出错了','出错了','10844',全局_wxapp_token)
+        wxPusher_send_messaget_post('出错了','出错了','你的提示id',全局_wxapp_token)
         return -1 #出错了
     
     老乞丐_路径 = "图片/老乞丐.png"
@@ -459,45 +459,16 @@ def job():              #循环登录加检查老乞丐
     '混14':['小号4']
 }
 全局_账号={
-    '小号1':['planck1001',#0为账号，1为密码
-           '123456qwe'],
-    '小号2':['planck1002',#0为账号，1为密码
-           '123456qwe'],  
-    '小号3':['planck1004',#0为账号，1为密码
-           '123456qwe'],
-    '小号4':['planck1005',#0为账号，1为密码
-           '123456qwe'],  
-    '小号5':['duntest11',
-            'qwert123'],
-    '小号5':['duntest11',
-            'qwert123'],
-    '小号6':['13782680452',
-            'huohuo1234'],
-    '小号7':['planck1003',
-            '201422plk']
+    '小号1':['你的帐号',#0为账号，1为密码
+           '你的密码']，
 }
 
 全局_topic={
-    '官1':'10883',
-    '官2':'10884',
-    '官3':'10885',
-    '混1':'10817',
-    '混2':'10837',
-    '混3':'10838',
-    '混4':'10839',
-    '混5':'10840',
-    '混6':'10841',
-    '混7':'10842',
-    '混8':'10843',
-    '混9':'10845',
-    '混10':'10846',
-    '混11':'10847',
-    '混12':'10848',
-    '混13':'10849'  ,
-    '混14':'10882'   
+    '官1':'你的id',
+ 
 }
 全局_EMULATOR_NAME = "127.0.0.1:62001"  # 模拟器的名称
-全局_wxapp_token='AT_tBVvCbgkwekaeyrGRoKiUN6m9Zdo4iAI'
+全局_wxapp_token='你的token'
 
 #通过adb shell dumpsys window | findstr mCurrentFocus获取当前运行的应用的消息，就是下面这个
 全局_启动='com.maple.madherogo/com.maple.madherogo.AppActivity'
