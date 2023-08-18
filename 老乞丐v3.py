@@ -301,9 +301,6 @@ def check_老乞丐(区,threshold=0.8,topic_id=None):
         内容=区+'老乞丐来了\n'+str(datetime.now())[:-7]
         wxPusher_send_messaget_post(区+'老乞丐来了',内容,topic_id,全局_wxapp_token)
 
-        # WxPusher.send_message(内容,                     
-        #             topic_ids=['10817'],
-        #             token='AT_tBVvCbgkwekaeyrGRoKiUN6m9Zdo4iAI')
     else:
         print("老乞丐没来")
     tap_screen(40,46)#点击退出键
@@ -347,18 +344,14 @@ def 提示区服不来():
             print(区+'已提示',内容)
             topic_id=全局_topic[区]
             wxPusher_send_messaget_post('今天没有老乞丐提示',内容,topic_id,全局_wxapp_token)
-            # WxPusher.send_message(内容,                     
-            #     topic_ids=[topic_id[区]],
-            #     token='AT_tBVvCbgkwekaeyrGRoKiUN6m9Zdo4iAI')
+ 
         if len(全局_可用_账号[区])==0 and len(全局_区服_总帐号[区])==0:#没有账号
             
             内容=str(区)+'目前没有账号，今天没有提示'
             print(区+'已提示',内容)
             topic_id=全局_topic[区]
             wxPusher_send_messaget_post('今天没有老乞丐提示',内容,topic_id,全局_wxapp_token)
-            # WxPusher.send_message(内容,                     
-            #     topic_ids=[topic_id[区]],
-            #     token='AT_tBVvCbgkwekaeyrGRoKiUN6m9Zdo4iAI')
+
             
             
 #检查已经满足福源的区服的乞丐，如果来了就返回1，防止以后检查
