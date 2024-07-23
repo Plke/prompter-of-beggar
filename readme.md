@@ -16,4 +16,3 @@
 
 详细教程查看：http://t.csdn.cn/uLDjH
 
-请勿用于商业
